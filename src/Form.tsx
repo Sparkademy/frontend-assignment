@@ -6,15 +6,19 @@ type ValidationResult = {
   help: string;
 }
 
-type FormData = {
-  name: string;
-}
+type FormDataKey = "name" | "email" | "age" | "website"
+type FormData = Record<FormDataKey, string>;
 
 export const RegistrationForm: React.FC<{ onSuccess: (values: FormData) => void }> = ({
   onSuccess,
 }) => {
   const [submitted, setSubmitted] = React.useState<boolean>(false);
-  const [values, setValues] = React.useState<FormData>({ name: "" });
+  const [values, setValues] = React.useState<FormData>({
+    "name": "",
+    "email": "",
+    "age": "",
+    "website": "",
+  });
 
   const layout = {
     labelCol: { span: 8 },
@@ -34,17 +38,16 @@ export const RegistrationForm: React.FC<{ onSuccess: (values: FormData) => void 
     }
   };
 
-  const updateField = (field: string, val: string) => {
+  const updateField = (field: FormDataKey, val: string) => {
     setValues({
       ...values,
       [field]: val,
     })
   }
 
-  const validateField = (field: string, force?: boolean): ValidationResult | undefined => {
+  const validateField = (field: FormDataKey, force?: boolean): ValidationResult | undefined => {
     if (!submitted && !force) { return }
 
-    //@ts-ignore
     if (values[field]) {
       return
     }
