@@ -64,6 +64,7 @@ export const RegistrationForm: React.FC<{ onSuccess: (values: FormData) => void 
       <Form
         {...layout}
         name="form-messages"
+        colon={false}
         onFinish={onSubmit}
       >
         <Form.Item
