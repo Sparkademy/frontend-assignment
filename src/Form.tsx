@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Form, Input, InputNumber, Button } from "antd";
+import { Form, Input, Button } from "antd";
 
 type ValidationResult = {
   validateStatus: "error" | "success";
@@ -88,7 +88,7 @@ export const RegistrationForm: React.FC<{ onSuccess: (values: FormData) => void 
           label="Age"
           {...validateField("age")}
         >
-          <InputNumber onChange={(ev => updateField("age", ev.toString()))} />
+          <Input onChange={(ev => updateField("age", ev.toString()))} />
         </Form.Item>
         <Form.Item
           data-testid="website"
