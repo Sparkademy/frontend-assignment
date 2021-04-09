@@ -1,5 +1,8 @@
 # Sparkademy Frontend Assignment
 
+#### Requirements
+- NodeJS version >= v10
+
 Technologies used: React, Typescript, Antd (UI Framework) and Jest/React Testing Library.
 
 This project is a frontend application with a simple form to be validated as following:
