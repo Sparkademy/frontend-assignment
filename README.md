@@ -12,6 +12,8 @@ This project is a frontend application with a simple form to be validated as fol
 - Age should be a numeric value (0-99)
 - Website should be a valid host name (http://domain.com)
 
+1. You should not use Antd's built in input validation features, you should write your own validation logic.
+
 To start the app:
 ```
 yarn start
