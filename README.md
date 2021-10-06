@@ -18,6 +18,7 @@ Technologies used: React, Typescript, Antd (UI Framework) and Jest/React Testing
 - Website should be a valid host name (http://domain.com or subdomain.domain.com)
 
 NOTE: You should not use Antd's built in input validation features, you should write your own validation logic.
+Check the tests to see the error messages expected to be shown for each validation.
 
 2. After all tests pass, refactor the Form component to use React Context instead of local state to track input values.
 
