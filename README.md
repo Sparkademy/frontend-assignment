@@ -5,7 +5,7 @@
 
 Technologies used: React, Typescript, Antd (UI Framework) and Jest/React Testing Library.
 
-This project is a frontend application with a simple form to be validated as following:
+1. This project is a frontend application with a simple form to be validated as following:
 
 - All fields are required
 - Name should be in the form of "FirstName LastName"
@@ -19,7 +19,10 @@ This project is a frontend application with a simple form to be validated as fol
 
 NOTE: You should not use Antd's built in input validation features, you should write your own validation logic.
 
-Preferably after all tests pass, refactor the Form component to use React Context instead of local state to track input values.
+2. After all tests pass, refactor the Form component to use React Context instead of local state to track input values.
+
+3. Submit form data to `https://formspree.io/f/xeqvdpvn` with a POST request with a body of
+`x-www-form-urlencoded` data.
 
 To start the app:
 ```
