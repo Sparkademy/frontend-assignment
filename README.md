@@ -8,11 +8,18 @@ Technologies used: React, Typescript, Antd (UI Framework) and Jest/React Testing
 This project is a frontend application with a simple form to be validated as following:
 
 - All fields are required
-- Email should be a valid email in the form of "email@domain.com"
-- Age should be a numeric value (0-99)
-- Website should be a valid host name (http://domain.com)
+- Name should be in the form of "FirstName LastName"
+- Email should be a valid email in the form of "email@domain.com" | "foo-bar@123.xy" | "plus+sign@hyphenated-domain.xy"
+- Password must follow these rules:
+  1. Must have at least 8 characters
+  2. Must have at least 1 uppercase letter
+  3. Must have at least 1 lowercase letter
+  4. Must have at least 1 number
+- Website should be a valid host name (http://domain.com or subdomain.domain.com)
 
-1. You should not use Antd's built in input validation features, you should write your own validation logic.
+NOTE: You should not use Antd's built in input validation features, you should write your own validation logic.
+
+Preferably after all tests pass, refactor the Form component to use React Context instead of local state to track input values.
 
 To start the app:
 ```

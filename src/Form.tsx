@@ -11,16 +11,16 @@ type ValidationResult = {
   help: string;
 }
 
-type FormDataKey = "name" | "email" | "age" | "website"
+type FormDataKey = "name" | "email" | "password" | "website";
 type FormData = Record<FormDataKey, string>;
 
-export const RegistrationForm: React.FC<{ onSuccess: (values: FormData) => void }> = ({
-  onSuccess,
-}) => {
+export const RegistrationForm: React.FC<{
+  onSuccess: (values: FormData) => void;
+}> = ({ onSuccess }) => {
   const [values, setValues] = React.useState<FormData>({
     name: "",
     email: "",
-    age: "",
+    password: "",
     website: "",
   });
 
@@ -49,11 +49,13 @@ export const RegistrationForm: React.FC<{ onSuccess: (values: FormData) => void 
         <Form.Item data-testid="email" name="email" label="Email">
           <Input onChange={(ev) => updateField("email", ev.target.value)} />
         </Form.Item>
-        <Form.Item data-testid="age" name="age" label="Age">
-          <Input onChange={(ev) => updateField("age", ev.toString())} />
-        </Form.Item>
         <Form.Item data-testid="website" name="website" label="Website">
           <Input onChange={(ev) => updateField("website", ev.target.value)} />
+        </Form.Item>
+        <Form.Item data-testid="password" label="Password" name="password">
+          <Input.Password
+            onChange={(ev) => updateField("password", ev.target.value)}
+          />
         </Form.Item>
 
         <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
