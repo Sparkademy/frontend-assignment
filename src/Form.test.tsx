@@ -47,7 +47,7 @@ describe("RegistrationForm", () => {
     const utils = render(<RegistrationForm onSuccess={onFinishMock} />);
 
     fireEvent.change(utils.getByLabelText(/name/i), {
-      target: { value: "foo" },
+      target: { value: "Foo Bar" },
     });
     fireEvent.change(utils.getByLabelText(/email/i), {
       target: { value: "foo@bar.com" },
@@ -80,6 +80,19 @@ describe("RegistrationForm", () => {
 
       expect(onFinishMock).toHaveBeenCalledTimes(1);
     });
+  });
+
+  it("name is validated correctly", async () => {
+    const onFinishMock = jest.fn(() => Promise.resolve());
+    const utils = render(<RegistrationForm onSuccess={onFinishMock} />);
+
+    fireEvent.change(utils.getByLabelText(/name/i), {
+      target: { value: "SingleName" },
+    });
+    fireEvent.click(utils.getByText("Submit"));
+    const emailField = utils.getByTestId("name");
+    await within(emailField).findByText("enter a valid name");
+    expect(onFinishMock).toHaveBeenCalledTimes(0);
   });
 
   it("email is validated correctly", async () => {
