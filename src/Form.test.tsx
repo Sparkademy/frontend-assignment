@@ -117,10 +117,9 @@ describe("RegistrationForm", () => {
       target: { value: "foo-bar@123.xy" },
     });
     fireEvent.click(utils.getByText("Submit"));
-    const msg = await within(emailField).findAllByText(
-      "enter a valid email address"
-    );
-    expect(msg).toHaveLength(0);
+    await expect(
+      within(emailField).findByText("enter a valid email address")
+    ).rejects.toThrow();
   });
 
   it("email with hyphenated domain should be valid", async () => {
@@ -132,10 +131,9 @@ describe("RegistrationForm", () => {
       target: { value: "plus+sign@hyphenated-domain.xy" },
     });
     fireEvent.click(utils.getByText("Submit"));
-    const msg = await within(emailField).findAllByText(
-      "enter a valid email address"
-    );
-    expect(msg).toHaveLength(0);
+    await expect(
+      within(emailField).findByText("enter a valid email address")
+    ).rejects.toThrow();
   });
 
   it("password have a min lengh of 8 characters", async () => {

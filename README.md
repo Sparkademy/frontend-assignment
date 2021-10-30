@@ -1,4 +1,6 @@
-# Sparkademy Frontend Assignment
+## Sparkademy Frontend Assignment
+
+This assignment should take between 60-90min depending on the person's experience and familiarity with the technologies involved.
 
 #### Requirements
 - NodeJS version >= v10
@@ -21,9 +23,6 @@ NOTE: You should not use Antd's built in input validation features, you should w
 Check the tests to see the error messages expected to be shown for each validation.
 
 2. After all tests pass, refactor the Form component to use React Context instead of local state to track input values.
-
-3. Submit form data to `https://formspree.io/f/xeqvdpvn` with a POST request with a body of
-`x-www-form-urlencoded` data.
 
 To start the app:
 ```
